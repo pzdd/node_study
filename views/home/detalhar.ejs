@@ -1,0 +1,14 @@
+<% include ../header.ejs%>
+  <section>
+    <form class="" action="/editar" method="post">
+      <input type="text" name="carro[nome]" placeholder="Digite o nome do carro" value="<%- carro.nome%>"><br>
+      <input type="text" name="carro[modelo]" placeholder="Digite o modelo do carro" value="<%- carro.modelo%>"><br>
+      <input type="text" name="carro[ano]" placeholder="Digite o ano do carro" value="<%- carro.ano%>"><br>
+      <input type="text" name="carro[fabricante]" placeholder="Digite o fabricante do carro" value="<%- carro.fabricante%>"><br>
+      <input type="hidden" name="index" value="<%- idx %>">
+      <input type="submit" value="Editar Carro">
+    </form>
+  </section>
+  <br>
+  <%include ../exit.ejs%>
+<% include ../footer.ejs%>

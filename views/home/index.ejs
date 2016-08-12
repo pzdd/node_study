@@ -1,0 +1,36 @@
+<%include ../header.ejs%>
+    <section>
+      <form class="" action="/cadastrar" method="post">
+        <input type="text" name="carro[nome]" placeholder="Digite o nome do carro"><br>
+        <input type="text" name="carro[modelo]" placeholder="Digite o modelo do carro"><br>
+        <input type="text" name="carro[ano]" placeholder="Digite o ano do carro"><br>
+        <input type="text" name="carro[fabricante]" placeholder="Digite o fabricante do carro"><br>
+        <input type="submit" value="Cadastrar Carro">
+      </form>
+      <br>
+    </section>
+    <table>
+    <%if(typeof carros != 'undefined'){%>
+      <% carros.forEach(function (carro,index){%>
+        <caption><b>Carros</b></caption>
+        <tr>
+          <thead>
+            <th>Nome </th>
+            <th>Modelo</th>
+            <th>Ano</th>
+            <th>Fabricante</th>
+          </thead>
+        </tr>
+        <tr>
+          <td><%- carro.nome%></td>
+          <td><%- carro.modelo%></td>
+          <td><%- carro.ano%></td>
+          <td><%- carro.fabricante%></td>
+          <td><a href="/edita/<%- carro._id%>">Editar</a></td>
+          <td><a href="/remove/<%- carro._id%>">Remover</a></td>
+        </tr>
+        <%})}%>
+      </table>
+    <br>
+<%include ../exit.ejs%>
+<%include ../footer.ejs%>
